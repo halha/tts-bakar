@@ -8,6 +8,7 @@ function App() {
     return (
         <Switch>
             <Route component={pages.Login} exact path={ROUTES.LOGIN()} />
+            <Route component={pages.Register} exact path={ROUTES.REGISTER()} />
         </Switch>
     );
 }
