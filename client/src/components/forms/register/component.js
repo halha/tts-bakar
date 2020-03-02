@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "@material-ui/core/Button";
 
 export class Component extends React.Component {
     render() {
@@ -28,7 +29,9 @@ export class Component extends React.Component {
                         required
                     />
                 </section>
-                <button type="submit">Register Me</button>
+                <Button type="submit" variant="contained" color="primary">
+                    Register Me
+                </Button>
             </form>
         );
     }
