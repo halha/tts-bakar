@@ -16,9 +16,8 @@ Projek PKWU SMK Telkom Malang 2020, "Bakar" by TTS
 1. git checkout develop
 2. git checkout -b feature_login (login diganti sesuai feature yg ditambahkan)
 3. Mulai coding
-4. [Setelah selesai coding] git pull develop (mendapatkan update terbaru dari branch develop, agar tidak crash)
-5. git checkout develop
-6. git merge feature_login (nama feature harus sama dengan branch feature yg tadi ditambahkan)
+4. [setelah selesai] git checkout develop
+5. git merge feature_login (nama feature harus sama dengan branch feature yg tadi ditambahkan)
 
 ### Learn More
 
