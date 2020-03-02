@@ -2,7 +2,7 @@
 
 Projek PKWU SMK Telkom Malang 2020, "Bakar" by TTS
 
-## Petunjuk Penggunaan
+## Petunjuk Development
 
 ### Clone Project
 
