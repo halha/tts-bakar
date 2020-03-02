@@ -1,7 +1,13 @@
 import React from "react";
+import LoginForm from "../../components/forms/Login";
 
 export default class Component extends React.Component {
     render() {
-        return <h1>Login Page</h1>;
+        return (
+            <main>
+                <h1>Login</h1>
+                <LoginForm />
+            </main>
+        );
     }
 }
