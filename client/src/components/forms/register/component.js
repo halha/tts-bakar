@@ -5,12 +5,12 @@ export class Component extends React.Component {
         return (
             <form>
                 <section>
-                    <label>Username</label>
-                    <input type="text" placeholder="Your Username" required />
-                </section>
-                <section>
                     <label>Full Name</label>
                     <input type="text" placeholder="Your Full Name" required />
+                </section>
+                <section>
+                    <label>Username</label>
+                    <input type="text" placeholder="Your Username" required />
                 </section>
                 <section>
                     <label>Email</label>
