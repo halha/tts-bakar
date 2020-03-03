@@ -9,6 +9,7 @@ function App() {
         <Switch>
             <Route component={pages.Login} exact path={ROUTES.LOGIN()} />
             <Route component={pages.Register} exact path={ROUTES.REGISTER()} />
+            <Route component={pages.Error404} />
         </Switch>
     );
 }
