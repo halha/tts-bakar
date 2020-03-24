@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
@@ -285,6 +286,13 @@ class component extends React.Component {
             this.props.type
           )}
         </Button>
+        <Grid container justify="flex-end">
+          <Grid item>
+            <Link to="/register" variant="body2">
+              Don't have account? Sign up
+            </Link>
+          </Grid>
+        </Grid>
       </form>
     );
   }

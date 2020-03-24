@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
-import Link from "@material-ui/core/Link";
+// import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
 import IconButton from "@material-ui/core/IconButton";
 import { withStyles } from "@material-ui/core/styles";
@@ -308,13 +309,13 @@ class component extends React.Component {
               label={
                 <div>
                   <span>I agree to the </span>
-                  <Link
+                  <a
                     href="https://www.termsfeed.com/terms-conditions/c4152b0db055858686b2f4e5700f817a"
                     target="_blank"
                     variant="body2"
                   >
                     Terms and Condition
-                  </Link>
+                  </a>
                 </div>
               }
             />
@@ -335,7 +336,7 @@ class component extends React.Component {
         </Button>
         <Grid container justify="flex-end">
           <Grid item>
-            <Link href="/login" variant="body2">
+            <Link to="/login" variant="body2">
               Already have an account? Sign in
             </Link>
           </Grid>
