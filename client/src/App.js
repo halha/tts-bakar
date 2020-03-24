@@ -34,7 +34,11 @@ export class App extends Component {
   _RenderApp() {
     return (
       <Switch>
-        <Route component={pages.Login} exact path={ROUTES.HOME()} />
+        <Redirect
+          from="/login"
+          to={this.state.lastPath ? this.state.lastPath : "/"}
+        />
+        <Route component={pages.Home} exact path={ROUTES.HOME()} />
         <Route component={pages.Error404} />
       </Switch>
     );

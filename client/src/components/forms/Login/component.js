@@ -116,8 +116,8 @@ class component extends React.Component {
 
   handleOnSubmit(e) {
     e.preventDefault();
-    let dEmail = "irfan@mail.com";
-    let dPass = "irfan321";
+    let dEmail = "hammam@test.com";
+    let dPass = "hammamTest123";
     let email = this.state.email;
     let password = this.state.password;
     if (email !== dEmail) {
