@@ -1,16 +1,49 @@
-import React from "react";
-import LoginForm from "../../components/forms/Login";
-import classes from "./styles.module.css";
+import React, { Component } from "react";
+import Avatar from "@material-ui/core/Avatar";
+import Login from "../../components/forms/Login";
+import Container from "@material-ui/core/Container";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Box from "@material-ui/core/Box";
+import Copyright from "../../components/elements/Copyright";
+import Typography from "@material-ui/core/Typography";
+import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import { withStyles } from "@material-ui/core/styles";
 
-export default class Component extends React.Component {
-    render() {
-        return (
-            <main className={classes.container}>
-                <section>
-                    <h1 className={classes.tagline}>Hi, Welcome Back</h1>
-                    <LoginForm />
-                </section>
-            </main>
-        );
-    }
+const styles = theme => ({
+  paper: {
+    marginTop: theme.spacing(8),
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center"
+  },
+  avatar: {
+    margin: theme.spacing(1),
+    padding: theme.spacing(3),
+    backgroundColor: theme.palette.primary.main
+  }
+});
+
+class component extends Component {
+  render() {
+    const { classes } = this.props;
+    return (
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <div className={classes.paper}>
+          <Avatar className={classes.avatar}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Login
+          </Typography>
+          <Login type="Login" history={this.props.history} />
+        </div>
+        <Box mt={8}>
+          <Copyright>Bakar</Copyright>
+        </Box>
+      </Container>
+    );
+  }
 }
+
+export default withStyles(styles, { withTheme: true })(component);
