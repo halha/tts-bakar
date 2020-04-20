@@ -1,35 +1,67 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Button from "@material-ui/core/Button";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
-import IconButton from "@material-ui/core/IconButton";
-import { withStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
-import OutlinedInput from "@material-ui/core/OutlinedInput";
 import InputLabel from "@material-ui/core/InputLabel";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import { Input } from "@material-ui/core";
+import Grid from "@material-ui/core/Grid";
+import Button from "@material-ui/core/Button";
+import FormControl from "@material-ui/core/FormControl";
+import FormHelperText from "@material-ui/core/FormHelperText";
+import IconButton from "@material-ui/core/IconButton";
 import InputAdornment from "@material-ui/core/InputAdornment";
+import { withStyles } from "@material-ui/core/styles";
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
-import FormControl from "@material-ui/core/FormControl";
-import CircularProgress from "@material-ui/core/CircularProgress";
-import FormHelperText from "@material-ui/core/FormHelperText";
 
-const styles = theme => ({
+const styles = (theme) => ({
   form: {
     width: "100%", // Fix IE 11 issue.
-    marginTop: theme.spacing(1)
+    marginTop: theme.spacing(5),
   },
   submit: {
-    margin: theme.spacing(3, 0, 2)
+    margin: theme.spacing(3, 0, 2),
+    padding: "4px 16px",
   },
   fcWidth: {
-    width: "100%"
+    width: "100%",
   },
   buttonProgress: {
-    color: "#fff"
-  }
+    color: "#fff",
+  },
 });
+
+const CustomField = withStyles({
+  root: {
+    "&:not(.Mui-disabled):hover::before": {
+      borderColor: "#7c87f2",
+    },
+  },
+  underline: {
+    "&:after": {
+      borderBottom: "2px solid #fff",
+    },
+    "&:before": {
+      borderBottom: "1px solid #7c87f2",
+    },
+  },
+  input: {
+    color: "#fff",
+  },
+})(Input);
+
+const CustomLabel = withStyles({
+  root: {
+    color: "#fff",
+  },
+  focused: {
+    "&.MuiFormLabel-root": {
+      color: "#fff",
+    },
+  },
+})(InputLabel);
+
 class component extends React.Component {
   constructor(props) {
     super(props);
@@ -44,7 +76,7 @@ class component extends React.Component {
       errorEmailMsg: "",
       errorPassMsg: "",
       errorAll: false,
-      errorAllMsg: "Fill all fields"
+      errorAllMsg: "Fill all fields",
     };
     this.handleClickShowPassword = this.handleClickShowPassword.bind(this);
   }
@@ -56,14 +88,14 @@ class component extends React.Component {
       this.setState({
         email: email,
         password: password,
-        remember: true
+        remember: true,
       });
     }
   }
 
   handleClickShowPassword() {
     this.setState({
-      showPassword: !this.state.showPassword
+      showPassword: !this.state.showPassword,
     });
   }
 
@@ -81,22 +113,22 @@ class component extends React.Component {
       ? this.setState({
           email: email,
           errorEmail: false,
-          errorEmailMsg: ""
+          errorEmailMsg: "",
         })
       : this.setState({
           errorEmail: true,
-          errorEmailMsg: "Email is not valid"
+          errorEmailMsg: "Email is not valid",
         });
     email === ""
       ? this.setState({
           errorEmail: false,
-          errorEmailMsg: ""
+          errorEmailMsg: "",
         })
       : this.setState({
-          email: email
+          email: email,
         });
     this.setState({
-      email: email
+      email: email,
     });
   }
 
@@ -104,13 +136,13 @@ class component extends React.Component {
     e.target.value === ""
       ? this.setState({
           errorPass: false,
-          errorPassMsg: ""
+          errorPassMsg: "",
         })
       : this.setState({
-          password: e.target.value
+          password: e.target.value,
         });
     this.setState({
-      password: e.target.value
+      password: e.target.value,
     });
   }
 
@@ -123,18 +155,18 @@ class component extends React.Component {
     if (email !== dEmail) {
       this.setState({
         errorEmail: true,
-        errorEmailMsg: "Email not found"
+        errorEmailMsg: "Email not found",
       });
     }
     if (password !== dPass) {
       this.setState({
         errorPass: true,
-        errorPassMsg: "Password combination is incorrect"
+        errorPassMsg: "Password combination is incorrect",
       });
     }
     if (!email && !password) {
       this.setState({
-        errorAll: true
+        errorAll: true,
       });
     } else {
       if (email === dEmail && password === dPass) {
@@ -156,7 +188,7 @@ class component extends React.Component {
   handleChangeRemember(e) {
     if (e.target.value) {
       this.setState({
-        remember: !this.state.remember
+        remember: !this.state.remember,
       });
     }
   }
@@ -169,131 +201,152 @@ class component extends React.Component {
   render() {
     const { classes } = this.props;
     return (
-      <form className={classes.form} onSubmit={e => this.handleOnSubmit(e)}>
-        <Grid container spacing={2}>
-          <Grid item xs={12}>
-            <FormControl className={classes.fcWidth} variant="outlined">
-              <InputLabel
-                htmlFor="email"
-                error={this.state.errorEmail ? true : false}
-              >
-                Email Address
-              </InputLabel>
-              <OutlinedInput
-                required
-                fullWidth
-                autoFocus
-                error={
-                  this.state.errorEmail || this.state.errorAll ? true : false
-                }
-                type="email"
-                id="email"
-                onChange={e => this.handleChangeEmail(e)}
-                value={this.state.email}
-                label="Email Address"
-                name="email"
-                autoComplete="email"
-              />
-              {this.state.errorEmailMsg !== "" ? (
-                <FormHelperText error>
-                  {this.state.errorEmailMsg}
-                </FormHelperText>
-              ) : (
-                ""
-              )}
-              {this.state.errorAll === true ? (
-                <FormHelperText error>{this.state.errorALlMsg}</FormHelperText>
-              ) : (
-                ""
-              )}
-            </FormControl>
-          </Grid>
-          <Grid item xs={12}>
-            <FormControl className={classes.fcWidth} variant="outlined">
-              <InputLabel
-                error={
-                  this.state.errorPass || this.state.errorAll ? true : false
-                }
-                htmlFor="outlined-adornment-password"
-              >
-                Password
-              </InputLabel>
-              <OutlinedInput
-                id="outlined-adornment-password"
-                type={this.state.showPassword ? "text" : "password"}
-                onChange={e => this.handleChangePassword(e)}
-                value={this.state.password}
-                error={
-                  this.state.errorPass || this.state.errorAll ? true : false
-                }
-                label="Password"
-                name="password"
-                autoComplete="password"
-                endAdornment={
-                  <InputAdornment position="end">
-                    <IconButton
-                      aria-label="toggle password visibility"
-                      onClick={this.handleClickShowPassword}
-                      onMouseDown={this.handleMouseDownPassword}
-                      edge="end"
-                    >
-                      {this.state.showPassword ? (
-                        <Visibility />
-                      ) : (
-                        <VisibilityOff />
-                      )}
-                    </IconButton>
-                  </InputAdornment>
-                }
-                labelWidth={70}
-              />
-              {this.state.errorPassMsg !== "" ? (
-                <FormHelperText error>{this.state.errorPassMsg}</FormHelperText>
-              ) : (
-                ""
-              )}
-              {this.state.errorAll === true ? (
-                <FormHelperText error>{this.state.errorALlMsg}</FormHelperText>
-              ) : (
-                ""
-              )}
-            </FormControl>
-          </Grid>
-          <Grid item xs={12}>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  onChange={e => this.handleChangeRemember(e)}
-                  checked={this.state.remember}
-                  value={this.state.remember}
-                  color="primary"
+      <div>
+        <h1 style={{ fontSize: "3rem" }}>Masuk</h1>
+        <form className={classes.form} onSubmit={(e) => this.handleOnSubmit(e)}>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <FormControl className={classes.fcWidth} variant="standard">
+                <CustomLabel
+                  htmlFor="email"
+                  error={this.state.errorEmail ? true : false}
+                >
+                  Email
+                </CustomLabel>
+                <CustomField
+                  required
+                  fullWidth
+                  autoFocus
+                  error={
+                    this.state.errorEmail || this.state.errorAll ? true : false
+                  }
+                  type="email"
+                  id="email"
+                  onChange={(e) => this.handleChangeEmail(e)}
+                  value={this.state.email}
+                  label="Email"
+                  name="email"
+                  autoComplete="email"
                 />
-              }
-              label="Remember me"
-            />
+                {this.state.errorEmailMsg !== "" ? (
+                  <FormHelperText error>
+                    {this.state.errorEmailMsg}
+                  </FormHelperText>
+                ) : (
+                  ""
+                )}
+                {this.state.errorAll === true ? (
+                  <FormHelperText error>
+                    {this.state.errorALlMsg}
+                  </FormHelperText>
+                ) : (
+                  ""
+                )}
+              </FormControl>
+            </Grid>
+            <Grid item xs={12}>
+              <FormControl className={classes.fcWidth} variant="standard">
+                <CustomLabel
+                  error={
+                    this.state.errorPass || this.state.errorAll ? true : false
+                  }
+                  htmlFor="outlined-adornment-password"
+                >
+                  Password
+                </CustomLabel>
+                <CustomField
+                  id="outlined-adornment-password"
+                  type={this.state.showPassword ? "text" : "password"}
+                  onChange={(e) => this.handleChangePassword(e)}
+                  value={this.state.password}
+                  error={
+                    this.state.errorPass || this.state.errorAll ? true : false
+                  }
+                  label="Password"
+                  name="password"
+                  autoComplete="password"
+                  endAdornment={
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={this.handleClickShowPassword}
+                        onMouseDown={this.handleMouseDownPassword}
+                        edge="end"
+                      >
+                        {this.state.showPassword ? (
+                          <Visibility />
+                        ) : (
+                          <VisibilityOff />
+                        )}
+                      </IconButton>
+                    </InputAdornment>
+                  }
+                  labelWidth={70}
+                />
+                {this.state.errorPassMsg !== "" ? (
+                  <FormHelperText error>
+                    {this.state.errorPassMsg}
+                  </FormHelperText>
+                ) : (
+                  ""
+                )}
+                {this.state.errorAll === true ? (
+                  <FormHelperText error>
+                    {this.state.errorALlMsg}
+                  </FormHelperText>
+                ) : (
+                  ""
+                )}
+              </FormControl>
+            </Grid>
+            <Grid item xs={12}>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    onChange={(e) => this.handleChangeRemember(e)}
+                    checked={this.state.remember}
+                    value={this.state.remember}
+                    color="primary"
+                  />
+                }
+                label="Remember me"
+              />
+            </Grid>
           </Grid>
-        </Grid>
-        <Button
-          type="submit"
-          fullWidth
-          variant="contained"
-          color="primary"
-          className={classes.submit}
-        >
-          {this.state.loading ? (
-            <CircularProgress size={24} className={classes.buttonProgress} />
-          ) : (
-            this.props.type
-          )}
-        </Button>
-        <Grid container justify="flex-end">
-          <Grid item>
-            <Link to="/register" variant="body2">
-              Don't have account? Sign up
-            </Link>
+          <Button
+            type="submit"
+            variant="contained"
+            style={{
+              backgroundColor: "#7c87f2",
+              color: "#fff",
+              borderRadius: "20px",
+              textTransform: "capitalize",
+            }}
+            className={classes.submit}
+          >
+            {this.state.loading ? (
+              <CircularProgress size={24} className={classes.buttonProgress} />
+            ) : (
+              this.props.type
+            )}
+          </Button>
+          <Grid container>
+            <Grid item>
+              <Link
+                to="/register"
+                variant="body2"
+                style={{
+                  textDecoration: "none",
+                  opacity: ".8",
+                  fontSize: ".8rem",
+                }}
+              >
+                Buat akun baru
+              </Link>
+            </Grid>
           </Grid>
-        </Grid>
-      </form>
+        </form>
+      </div>
     );
   }
 }
