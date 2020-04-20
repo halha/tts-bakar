@@ -14,6 +14,8 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import { withStyles } from "@material-ui/core/styles";
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
+import AccountCircle from "@material-ui/icons/AccountCircle";
+import LockIcon from "@material-ui/icons/Lock";
 
 const styles = (theme) => ({
   form: {
@@ -26,6 +28,12 @@ const styles = (theme) => ({
   },
   fcWidth: {
     width: "100%",
+  },
+  icWidth: {
+    width: "10%",
+  },
+  fccWidth: {
+    width: "85%",
   },
   buttonProgress: {
     color: "#fff",
@@ -206,98 +214,118 @@ class component extends React.Component {
         <form className={classes.form} onSubmit={(e) => this.handleOnSubmit(e)}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
-              <FormControl className={classes.fcWidth} variant="standard">
-                <CustomLabel
-                  htmlFor="email"
-                  error={this.state.errorEmail ? true : false}
-                >
-                  Email
-                </CustomLabel>
-                <CustomField
-                  required
-                  fullWidth
-                  autoFocus
-                  error={
-                    this.state.errorEmail || this.state.errorAll ? true : false
-                  }
-                  type="email"
-                  id="email"
-                  onChange={(e) => this.handleChangeEmail(e)}
-                  value={this.state.email}
-                  label="Email"
-                  name="email"
-                  autoComplete="email"
-                />
-                {this.state.errorEmailMsg !== "" ? (
-                  <FormHelperText error>
-                    {this.state.errorEmailMsg}
-                  </FormHelperText>
-                ) : (
-                  ""
-                )}
-                {this.state.errorAll === true ? (
-                  <FormHelperText error>
-                    {this.state.errorALlMsg}
-                  </FormHelperText>
-                ) : (
-                  ""
-                )}
-              </FormControl>
+              <Grid container spacing={1} alignItems="flex-end">
+                <Grid item>
+                  <AccountCircle />
+                </Grid>
+                <Grid item className={classes.fccWidth}>
+                  <FormControl className={classes.fcWidth} variant="standard">
+                    <CustomLabel
+                      htmlFor="email"
+                      error={this.state.errorEmail ? true : false}
+                    >
+                      Email
+                    </CustomLabel>
+                    <CustomField
+                      required
+                      fullWidth
+                      autoFocus
+                      error={
+                        this.state.errorEmail || this.state.errorAll
+                          ? true
+                          : false
+                      }
+                      type="email"
+                      id="email"
+                      onChange={(e) => this.handleChangeEmail(e)}
+                      value={this.state.email}
+                      label="Email"
+                      name="email"
+                      autoComplete="email"
+                    />
+                    {this.state.errorEmailMsg !== "" ? (
+                      <FormHelperText error>
+                        {this.state.errorEmailMsg}
+                      </FormHelperText>
+                    ) : (
+                      ""
+                    )}
+                    {this.state.errorAll === true ? (
+                      <FormHelperText error>
+                        {this.state.errorALlMsg}
+                      </FormHelperText>
+                    ) : (
+                      ""
+                    )}
+                  </FormControl>
+                </Grid>
+              </Grid>
             </Grid>
             <Grid item xs={12}>
-              <FormControl className={classes.fcWidth} variant="standard">
-                <CustomLabel
-                  error={
-                    this.state.errorPass || this.state.errorAll ? true : false
-                  }
-                  htmlFor="outlined-adornment-password"
-                >
-                  Password
-                </CustomLabel>
-                <CustomField
-                  id="outlined-adornment-password"
-                  type={this.state.showPassword ? "text" : "password"}
-                  onChange={(e) => this.handleChangePassword(e)}
-                  value={this.state.password}
-                  error={
-                    this.state.errorPass || this.state.errorAll ? true : false
-                  }
-                  label="Password"
-                  name="password"
-                  autoComplete="password"
-                  endAdornment={
-                    <InputAdornment position="end">
-                      <IconButton
-                        aria-label="toggle password visibility"
-                        onClick={this.handleClickShowPassword}
-                        onMouseDown={this.handleMouseDownPassword}
-                        edge="end"
-                      >
-                        {this.state.showPassword ? (
-                          <Visibility />
-                        ) : (
-                          <VisibilityOff />
-                        )}
-                      </IconButton>
-                    </InputAdornment>
-                  }
-                  labelWidth={70}
-                />
-                {this.state.errorPassMsg !== "" ? (
-                  <FormHelperText error>
-                    {this.state.errorPassMsg}
-                  </FormHelperText>
-                ) : (
-                  ""
-                )}
-                {this.state.errorAll === true ? (
-                  <FormHelperText error>
-                    {this.state.errorALlMsg}
-                  </FormHelperText>
-                ) : (
-                  ""
-                )}
-              </FormControl>
+              <Grid container spacing={1} alignItems="flex-end">
+                <Grid item>
+                  <LockIcon />
+                </Grid>
+                <Grid item className={classes.fccWidth}>
+                  <FormControl className={classes.fcWidth} variant="standard">
+                    <CustomLabel
+                      error={
+                        this.state.errorPass || this.state.errorAll
+                          ? true
+                          : false
+                      }
+                      htmlFor="outlined-adornment-password"
+                    >
+                      Password
+                    </CustomLabel>
+                    <CustomField
+                      id="outlined-adornment-password"
+                      type={this.state.showPassword ? "text" : "password"}
+                      onChange={(e) => this.handleChangePassword(e)}
+                      value={this.state.password}
+                      error={
+                        this.state.errorPass || this.state.errorAll
+                          ? true
+                          : false
+                      }
+                      label="Password"
+                      name="password"
+                      autoComplete="password"
+                      endAdornment={
+                        <InputAdornment position="end">
+                          <IconButton
+                            aria-label="toggle password visibility"
+                            onClick={this.handleClickShowPassword}
+                            onMouseDown={this.handleMouseDownPassword}
+                            edge="end"
+                          >
+                            {this.state.showPassword ? (
+                              <Visibility />
+                            ) : (
+                              <VisibilityOff />
+                            )}
+                          </IconButton>
+                        </InputAdornment>
+                      }
+                      labelWidth={70}
+                    />
+                    {this.state.errorPassMsg !== "" ? (
+                      <FormHelperText error>
+                        {this.state.errorPassMsg}
+                      </FormHelperText>
+                    ) : (
+                      ""
+                    )}
+                    {this.state.errorAll === true ? (
+                      <FormHelperText error>
+                        {this.state.errorALlMsg}
+                      </FormHelperText>
+                    ) : (
+                      ""
+                    )}
+                  </FormControl>
+                </Grid>
+              </Grid>
             </Grid>
             <Grid item xs={12}>
               <FormControlLabel
