@@ -8,7 +8,7 @@ export class App extends Component {
 
     this.state = {
       isLoggedIn: false,
-      lastPath: ""
+      lastPath: "",
     };
   }
 
@@ -20,11 +20,11 @@ export class App extends Component {
         if (lastPath) {
           this.setState({
             isLoggedIn: true,
-            lastPath: lastPath
+            lastPath: lastPath,
           });
         } else {
           this.setState({
-            isLoggedIn: true
+            isLoggedIn: true,
           });
         }
       }
@@ -47,6 +47,7 @@ export class App extends Component {
   _RenderLogin() {
     return (
       <Switch>
+        <Route component={pages.Home} exact path={ROUTES.HOME()} />
         <Route component={pages.Login} exact path={ROUTES.LOGIN()} />
         <Route component={pages.Register} exact path={ROUTES.REGISTER()} />
         <Route>
