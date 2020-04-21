@@ -344,7 +344,7 @@ class component extends React.Component {
                 />
               }
               label={
-                <div style={{ opacity: "0.8" }}>
+                <div style={{ opacity: "0.8", fontSize: ".8rem" }}>
                   <span>Saya menyetujui </span>
                   <a
                     href="https://www.termsfeed.com/terms-conditions/c4152b0db055858686b2f4e5700f817a"
