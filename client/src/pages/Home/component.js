@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import Button from "@material-ui/core/Button";
 import PageBase from "../../components/layouts/PageBase";
+import { TEXT } from "../../configs";
+
+import classes from "./styles.module.css";
 
 export class component extends Component {
   _logOutHandler = (e) => {
@@ -13,8 +15,27 @@ export class component extends Component {
   render() {
     return (
       <PageBase logout={(e) => this._logOutHandler(e)}>
-        <h1>Welcome</h1>
-        <Button onClick={(e) => this._logOutHandler(e)}>Logout</Button>
+        <div className={classes.Definition}>
+          <section className={classes.Sec1}>
+            <div>
+              <h1>
+                Bagikan <span>Karyamu!</span>
+              </h1>
+              <p>{TEXT.TOOLTIP_DEFINITON()}</p>
+              <button className={classes.Button}>Cari tau</button>
+            </div>
+            <div>
+              <p>Image Pending</p>
+            </div>
+          </section>
+          <section className={classes.Sec2}>
+            <div>
+              <h2>Cari Inspirasi Karyamu</h2>
+              <input type="search" placeholder="Desain Web Perpustakaan" />
+              <p>{TEXT.TOOLTIP_BENEFIT()}</p>
+            </div>
+          </section>
+        </div>
       </PageBase>
     );
   }
