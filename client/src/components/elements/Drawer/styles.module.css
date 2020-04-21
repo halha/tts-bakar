@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.Nav {
+  width: 100%;
+  height: 60px;
+  padding: 0 50px;
+  box-sizing: border-box;
+  background-color: #2b2f54;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+.Nav .logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.Nav .logo .imgBox {
+  height: 80%;
+  margin-right: 15px;
+}
+
+.Nav .logo .imgBox img {
+  height: inherit;
+}
+
+.Nav .logo span {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #fff;
+}
+
+.Nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.Nav ul li {
+  margin: 0 25px;
+}
+
+.Nav ul li .Link {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.Nav ul li .Link::after {
+  content: "";
+  height: 2px;
+  width: 0;
+  display: block;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  background: none repeat scroll 0 0 transparent;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+}
+
+.Nav ul li .Link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.Nav ul li .Link.signUp {
+  background-color: #7c87f2;
+  padding: 6px 24px;
+  border-radius: 25px;
+}
+
+.Nav ul li .Link.signUp:hover {
+  opacity: 0.8;
+}
+
+.Nav ul li .Link.signUp:hover::after {
+  width: 0;
+}

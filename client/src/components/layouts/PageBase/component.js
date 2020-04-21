@@ -20,7 +20,7 @@ export class component extends Component {
   render() {
     return (
       <div>
-        <Drawer login={this.state.isLoggedIn} />
+        <Drawer login={this.state.isLoggedIn} logout={this.props.logout} />
         {this.props.children}
       </div>
     );
