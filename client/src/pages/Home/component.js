@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
+import PageBase from "../../components/layouts/PageBase";
 
 export class component extends Component {
   _logOutHandler = (e) => {
@@ -11,10 +12,10 @@ export class component extends Component {
 
   render() {
     return (
-      <div>
+      <PageBase logout={(e) => this._logOutHandler(e)}>
         <h1>Welcome</h1>
         <Button onClick={(e) => this._logOutHandler(e)}>Logout</Button>
-      </div>
+      </PageBase>
     );
   }
 }
