@@ -27,14 +27,8 @@ const styles = (theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
-  fccWidth: {
-    width: "85%",
-  },
   fcWidth: {
     width: "100%",
-  },
-  icWidth: {
-    width: "10%",
   },
   buttonProgress: {
     color: "#fff",
@@ -254,7 +248,7 @@ class component extends React.Component {
               <Grid item xs={1}>
                 <AccountCircle />
               </Grid>
-              <Grid item xs={11} className={classes.fccWidth}>
+              <Grid item xs={11}>
                 <FormControl className={classes.fcWidth} variant="standard">
                   <CustomLabel
                     htmlFor="email"
@@ -290,7 +284,7 @@ class component extends React.Component {
               <Grid item xs={1}>
                 <LockIcon />
               </Grid>
-              <Grid item xs={11} className={classes.fccWidth}>
+              <Grid item xs={11}>
                 <FormControl className={classes.fcWidth} variant="standard">
                   <CustomLabel
                     htmlFor="password"
