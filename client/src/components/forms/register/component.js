@@ -1,14 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
-// import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
 import IconButton from "@material-ui/core/IconButton";
 import { withStyles } from "@material-ui/core/styles";
-import OutlinedInput from "@material-ui/core/OutlinedInput";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
@@ -16,7 +12,7 @@ import FormControl from "@material-ui/core/FormControl";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import { Input, InputLabel } from "@material-ui/core";
-import AccountCircle from "@material-ui/icons/AccountCircle";
+import PersonIcon from "@material-ui/icons/Person";
 import LockIcon from "@material-ui/icons/Lock";
 
 const styles = (theme) => ({
@@ -246,7 +242,7 @@ class component extends React.Component {
           <Grid item xs={12}>
             <Grid container spacing={1} alignItems="flex-end">
               <Grid item xs={1}>
-                <AccountCircle />
+                <PersonIcon />
               </Grid>
               <Grid item xs={11}>
                 <FormControl className={classes.fcWidth} variant="standard">

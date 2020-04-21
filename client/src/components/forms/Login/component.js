@@ -14,7 +14,7 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import { withStyles } from "@material-ui/core/styles";
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
-import AccountCircle from "@material-ui/icons/AccountCircle";
+import PersonIcon from "@material-ui/icons/Person";
 import LockIcon from "@material-ui/icons/Lock";
 
 const styles = (theme) => ({
@@ -210,7 +210,7 @@ class component extends React.Component {
             <Grid item xs={12}>
               <Grid container spacing={1} alignItems="flex-end">
                 <Grid item xs={1}>
-                  <AccountCircle />
+                  <PersonIcon />
                 </Grid>
                 <Grid item xs={11}>
                   <FormControl className={classes.fcWidth} variant="standard">
