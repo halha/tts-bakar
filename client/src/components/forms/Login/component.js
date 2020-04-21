@@ -26,14 +26,8 @@ const styles = (theme) => ({
     margin: theme.spacing(3, 0, 2),
     padding: "4px 16px",
   },
-  fccWidth: {
-    width: "85%",
-  },
   fcWidth: {
     width: "100%",
-  },
-  icWidth: {
-    width: "10%",
   },
   buttonProgress: {
     color: "#fff",
@@ -215,10 +209,10 @@ class component extends React.Component {
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <Grid container spacing={1} alignItems="flex-end">
-                <Grid item>
+                <Grid item xs={1}>
                   <AccountCircle />
                 </Grid>
-                <Grid item className={classes.fccWidth}>
+                <Grid item xs={11}>
                   <FormControl className={classes.fcWidth} variant="standard">
                     <CustomLabel
                       htmlFor="email"
@@ -263,10 +257,10 @@ class component extends React.Component {
             </Grid>
             <Grid item xs={12}>
               <Grid container spacing={1} alignItems="flex-end">
-                <Grid item>
+                <Grid item xs={1}>
                   <LockIcon />
                 </Grid>
-                <Grid item className={classes.fccWidth}>
+                <Grid item xs={11}>
                   <FormControl className={classes.fcWidth} variant="standard">
                     <CustomLabel
                       error={
