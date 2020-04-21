@@ -1,12 +1,40 @@
-.container {
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.Container {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../../assets/BG.jpg") no-repeat center;
+  background-size: cover;
 }
 
-.tagline {
-    text-align: center;
+.Container * {
+  color: #fff;
+}
+
+.Login,
+.LeftImage {
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.Login {
+  padding: 0 15% 0 10%;
+}
+
+.LeftImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 150px;
+}
+
+.ImgBox {
+  width: 70%;
+}
+
+.ImgBox img {
+  width: 100%;
 }

@@ -26,14 +26,14 @@ const styles = (theme) => ({
     margin: theme.spacing(3, 0, 2),
     padding: "4px 16px",
   },
+  fccWidth: {
+    width: "85%",
+  },
   fcWidth: {
     width: "100%",
   },
   icWidth: {
     width: "10%",
-  },
-  fccWidth: {
-    width: "85%",
   },
   buttonProgress: {
     color: "#fff",
