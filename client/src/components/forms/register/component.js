@@ -313,7 +313,6 @@ class component extends React.Component {
                         </IconButton>
                       </InputAdornment>
                     }
-                    labelWidth={70}
                   />
                   {this.state.errorPassMsg !== "" ? (
                     <FormHelperText error>
