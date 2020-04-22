@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withStyles } from "@material-ui/core/styles";
-import { FormControl, InputLabel, Select, MenuItem } from "@material-ui/core";
+import { Select, MenuItem } from "@material-ui/core";
 
 const CustomSelect = withStyles({
   root: {
@@ -24,18 +24,18 @@ export class component extends Component {
     this.setState({ age: e.target.value });
   };
   render() {
-    const { classes } = this.props;
     return (
       <CustomSelect
+        native
         labelId="demo-simple-select-outlined-label"
         id="demo-simple-select-outlined"
         value={this.state.age}
         onChange={this._handleChange}
         variant="outlined"
       >
-        <MenuItem value="populer">Populer</MenuItem>
-        <MenuItem value="terbaru">Terbaru</MenuItem>
-        <MenuItem value="terlama">Terlama</MenuItem>
+        <option value="populer">Populer</option>
+        <option value="terbaru">Terbaru</option>
+        <option value="terlama">Terlama</option>
       </CustomSelect>
     );
   }

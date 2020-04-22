@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Masonry from "react-masonry-css";
 import PageBase from "../../components/layouts/PageBase";
 import Filter from "../../components/fragments/Filter";
 import Sort from "../../components/fragments/Sort";
@@ -54,11 +55,15 @@ export class component extends Component {
             <Filter list={FILTER_LIST} />
             <Sort />
           </div>
-          <div className={classes.postContainer}>
+          <Masonry
+            breakpointCols={3}
+            className={classes.myMasonryGrid}
+            columnClassName={classes.myMasonryGridColumn}
+          >
             {postList.map((data) => (
               <Post key={data.id} data={data} />
             ))}
-          </div>
+          </Masonry>
         </div>
       </PageBase>
     );

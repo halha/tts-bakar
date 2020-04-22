@@ -1,8 +1,7 @@
 .Post {
   position: relative;
-  width: 30%;
+  width: 100%;
   height: auto;
-  margin-bottom: 30px;
   overflow: hidden;
   box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
