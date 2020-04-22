@@ -6,7 +6,8 @@ const postList = [
     description: "Tipografi dan Pisau, Knife Typography Illustration",
     profile: {
       username: "Dimas Angkasa ",
-      avatar: "",
+      avatar:
+        "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShaggyMullet&accessoriesType=Prescription01&hairColor=Red&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Squint&eyebrowType=Angry&mouthType=Tongue&skinColor=Pale",
     },
   },
   {
@@ -16,7 +17,8 @@ const postList = [
     description: "Tipografi dan Pisau, Knife Typography Illustration",
     profile: {
       username: "Dimas Angkasa ",
-      avatar: "",
+      avatar:
+        "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShaggyMullet&accessoriesType=Prescription01&hairColor=Red&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Squint&eyebrowType=Angry&mouthType=Tongue&skinColor=Pale",
     },
   },
   {
@@ -26,7 +28,8 @@ const postList = [
     description: "Tipografi dan Pisau, Knife Typography Illustration",
     profile: {
       username: "Dimas Angkasa ",
-      avatar: "",
+      avatar:
+        "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShaggyMullet&accessoriesType=Prescription01&hairColor=Red&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Squint&eyebrowType=Angry&mouthType=Tongue&skinColor=Pale",
     },
   },
   {
@@ -36,7 +39,8 @@ const postList = [
     description: "Tipografi dan Pisau, Knife Typography Illustration",
     profile: {
       username: "Dimas Angkasa ",
-      avatar: "",
+      avatar:
+        "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShaggyMullet&accessoriesType=Prescription01&hairColor=Red&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Squint&eyebrowType=Angry&mouthType=Tongue&skinColor=Pale",
     },
   },
   {
@@ -46,7 +50,8 @@ const postList = [
     description: "Tipografi dan Pisau, Knife Typography Illustration",
     profile: {
       username: "Dimas Angkasa ",
-      avatar: "",
+      avatar:
+        "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShaggyMullet&accessoriesType=Prescription01&hairColor=Red&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Squint&eyebrowType=Angry&mouthType=Tongue&skinColor=Pale",
     },
   },
   {
@@ -56,7 +61,8 @@ const postList = [
     description: "Tipografi dan Pisau, Knife Typography Illustration",
     profile: {
       username: "Dimas Angkasa ",
-      avatar: "",
+      avatar:
+        "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShaggyMullet&accessoriesType=Prescription01&hairColor=Red&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Squint&eyebrowType=Angry&mouthType=Tongue&skinColor=Pale",
     },
   },
   {
@@ -66,7 +72,8 @@ const postList = [
     description: "Tipografi dan Pisau, Knife Typography Illustration",
     profile: {
       username: "Dimas Angkasa ",
-      avatar: "",
+      avatar:
+        "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShaggyMullet&accessoriesType=Prescription01&hairColor=Red&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Squint&eyebrowType=Angry&mouthType=Tongue&skinColor=Pale",
     },
   },
   {
@@ -76,7 +83,8 @@ const postList = [
     description: "Tipografi dan Pisau, Knife Typography Illustration",
     profile: {
       username: "Dimas Angkasa ",
-      avatar: "",
+      avatar:
+        "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShaggyMullet&accessoriesType=Prescription01&hairColor=Red&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Squint&eyebrowType=Angry&mouthType=Tongue&skinColor=Pale",
     },
   },
 ];

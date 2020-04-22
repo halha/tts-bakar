@@ -16,7 +16,7 @@ export class component extends Component {
           </div>
           <div className={classes.profile}>
             <div>
-              <img src="" alt="avatar" />
+              <img src={data.profile.avatar} alt="avatar" />
             </div>
             <span>{data.profile.username}</span>
           </div>
