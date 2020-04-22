@@ -1,0 +1,24 @@
+.Filter {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  overflow: hidden;
+}
+
+.Filter li {
+  margin-right: 50px;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #c0c0c0;
+  transition: 0.1s;
+}
+
+.Filter li.active,
+.Filter li:hover {
+  background: #ececec;
+  font-weight: bold;
+  color: #000;
+}

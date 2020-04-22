@@ -1,10 +1,21 @@
 import React, { Component } from "react";
 import PageBase from "../../components/layouts/PageBase";
+import Filter from "../../components/fragments/Filter";
+import Sort from "../../components/fragments/Sort";
 import { TEXT } from "../../configs";
+import { FILTER_LIST } from "../../constants";
 
 import classes from "./styles.module.css";
 
 export class component extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      filterClicked: false,
+    };
+  }
+
   _logOutHandler = (e) => {
     e.preventDefault();
     localStorage.setItem("Login", false);
@@ -35,6 +46,12 @@ export class component extends Component {
               <p>{TEXT.TOOLTIP_BENEFIT()}</p>
             </div>
           </section>
+        </div>
+        <div className={classes.Post}>
+          <div className={classes.nav2}>
+            <Filter list={FILTER_LIST} />
+            <Sort />
+          </div>
         </div>
       </PageBase>
     );

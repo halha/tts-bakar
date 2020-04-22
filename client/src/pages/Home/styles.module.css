@@ -1,12 +1,17 @@
-.Definition {
+.Definition,
+.Post {
   position: relative;
-  background: url("../../assets/BG2x.jpg") no-repeat center;
-  background-size: cover;
   width: 100%;
   min-height: 100vh;
   height: auto;
   overflow: hidden;
   box-sizing: border-box;
+  padding: 50px;
+}
+
+.Definition {
+  background: url("../../assets/BG2x.jpg") no-repeat;
+  background-size: cover;
   padding: 0 50px;
 }
 
@@ -64,9 +69,10 @@
 
 .Definition .Sec2 {
   width: 100%;
-  height: 100vh;
+  min-height: 70vh;
+  height: auto;
   box-sizing: border-box;
-  padding: 50px 0;
+  padding: 0 0 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -104,4 +110,13 @@
   font-size: 1.2rem;
   width: 70%;
   margin: auto;
+}
+
+.Post .nav2 {
+  width: 100%;
+  height: 80px;
+  border-bottom: 1px solid #c0c0c0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
