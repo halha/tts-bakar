@@ -1,5 +1,5 @@
 .Definition,
-.Post {
+.PostSec {
   position: relative;
   width: 100%;
   min-height: 100vh;
@@ -112,11 +112,19 @@
   margin: auto;
 }
 
-.Post .nav2 {
+.PostSec .nav2 {
   width: 100%;
   height: 80px;
   border-bottom: 1px solid #c0c0c0;
+  margin-bottom: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.PostSec .postContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }

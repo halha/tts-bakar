@@ -1,0 +1,71 @@
+.Post {
+  position: relative;
+  width: 30%;
+  height: auto;
+  margin-bottom: 30px;
+  overflow: hidden;
+  box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.imgBox {
+  width: 100%;
+}
+
+.imgBox img {
+  width: 100%;
+}
+
+.des {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  transform: translateY(100%);
+  transition: 0.5s;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.des .pDes {
+  width: 80%;
+  height: 85%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.des .profile {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.des .profile div {
+  height: 24px;
+  width: 24px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background: salmon;
+  overflow: hidden;
+}
+
+.des .profile div img {
+  height: 100%;
+}
+
+.des .profile span {
+  color: #9e9e9e;
+}
+
+.Post:hover .des {
+  transform: translateY(0);
+}

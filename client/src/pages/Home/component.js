@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import PageBase from "../../components/layouts/PageBase";
 import Filter from "../../components/fragments/Filter";
 import Sort from "../../components/fragments/Sort";
+import Post from "../../components/fragments//Post";
 import { TEXT } from "../../configs";
 import { FILTER_LIST } from "../../constants";
+import postList from "../../constants/Dummy/postList";
 
 import classes from "./styles.module.css";
 
@@ -47,10 +49,15 @@ export class component extends Component {
             </div>
           </section>
         </div>
-        <div className={classes.Post}>
+        <div className={classes.PostSec}>
           <div className={classes.nav2}>
             <Filter list={FILTER_LIST} />
             <Sort />
+          </div>
+          <div className={classes.postContainer}>
+            {postList.map((data) => (
+              <Post key={data.id} data={data} />
+            ))}
           </div>
         </div>
       </PageBase>
