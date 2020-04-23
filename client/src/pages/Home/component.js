@@ -19,6 +19,15 @@ export class component extends Component {
     };
   }
 
+  componentDidMount() {
+    var loggedIn = localStorage.getItem("Login");
+    if (loggedIn === "true") {
+      document.title = "BaKar | Sealamat Datang!";
+    } else {
+      document.title = "BaKar";
+    }
+  }
+
   _logOutHandler = (e) => {
     e.preventDefault();
     localStorage.setItem("Login", false);

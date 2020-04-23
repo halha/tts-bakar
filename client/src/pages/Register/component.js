@@ -5,6 +5,10 @@ import PersonAdd from "@material-ui/icons/PersonAdd";
 import classes from "./styles.module.css";
 
 class component extends Component {
+  componentDidMount() {
+    document.title = "BaKar | Register";
+  }
+
   _preventDragHandler = (e) => {
     e.preventDefault();
   };

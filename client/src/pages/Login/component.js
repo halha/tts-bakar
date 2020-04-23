@@ -3,6 +3,10 @@ import Login from "../../components/forms/Login";
 import classes from "./styles.module.css";
 
 class component extends Component {
+  componentDidMount() {
+    document.title = "BaKar | Login";
+  }
+
   _preventDragHandler = (e) => {
     e.preventDefault();
   };
