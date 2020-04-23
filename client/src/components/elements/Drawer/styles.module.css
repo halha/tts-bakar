@@ -86,3 +86,15 @@
 .Nav ul li .Link.signUp:hover::after {
   width: 0;
 }
+
+.Nav ul li .avatarBox {
+  overflow: hidden;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.Nav ul li .avatarBox img {
+  height: 100%;
+}

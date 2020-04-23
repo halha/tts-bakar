@@ -26,7 +26,10 @@ export class component extends Component {
           </li>
           <li>
             <div className={classes.avatarBox}>
-              <img src="" alt="avatar" />
+              <img
+                src="https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShaggyMullet&accessoriesType=Prescription01&hairColor=Red&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Squint&eyebrowType=Angry&mouthType=Tongue&skinColor=Pale"
+                alt="avatar"
+              />
             </div>
           </li>
         </ul>
