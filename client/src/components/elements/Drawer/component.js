@@ -4,12 +4,20 @@ import { Link } from "react-router-dom";
 import classes from "./styles.module.css";
 
 export class component extends Component {
+  _preventDragHandler = (e) => {
+    e.preventDefault();
+  };
+
   _renderAfterLogin = () => {
     return (
       <nav className={classes.Nav}>
         <div className={classes.logo}>
           <div className={classes.imgBox}>
-            <img src={require("../../../assets/LOGO.svg")} alt="Bakar" />
+            <img
+              src={require("../../../assets/LOGO.svg")}
+              alt="Bakar"
+              onDragStart={this._preventDragHandler}
+            />
           </div>
           <span>bakar (Logged In)</span>
         </div>
@@ -42,7 +50,11 @@ export class component extends Component {
       <nav className={classes.Nav}>
         <div className={classes.logo}>
           <div className={classes.imgBox}>
-            <img src={require("../../../assets/LOGO.svg")} alt="Bakar" />
+            <img
+              src={require("../../../assets/LOGO.svg")}
+              alt="Bakar"
+              onDragStart={this._preventDragHandler}
+            />
           </div>
           <span>bakar</span>
         </div>
