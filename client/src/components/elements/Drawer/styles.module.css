@@ -88,6 +88,7 @@
 }
 
 .Nav ul li .avatarBox {
+  position: relative;
   overflow: hidden;
   width: 34px;
   height: 34px;
@@ -97,4 +98,8 @@
 
 .Nav ul li .avatarBox img {
   height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
