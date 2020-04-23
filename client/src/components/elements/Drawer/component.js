@@ -54,7 +54,7 @@ export class component extends Component {
           </li>
           <li>
             <Link
-              to="/login"
+              to="/register"
               className={[classes.Link, classes.signUp].join(" ")}
             >
               Daftar
