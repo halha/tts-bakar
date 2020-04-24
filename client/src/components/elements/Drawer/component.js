@@ -19,7 +19,7 @@ export class component extends Component {
               onDragStart={this._preventDragHandler}
             />
           </div>
-          <span>bakar (Logged In)</span>
+          <span>bakar</span>
         </div>
         <ul>
           <li>
