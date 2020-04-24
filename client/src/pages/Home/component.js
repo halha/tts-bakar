@@ -16,6 +16,8 @@ export class component extends Component {
 
     this.state = {
       filterClicked: false,
+      term: "",
+      results: "",
     };
   }
 
@@ -28,16 +30,17 @@ export class component extends Component {
     }
   }
 
-  _logOutHandler = (e) => {
+  _searchOnChange = (e) => {
+    this.setState({ term: e.target.value });
+  };
+
+  _searcOnSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem("Login", false);
-    localStorage.removeItem("lastPath");
-    window.location.reload();
   };
 
   render() {
     return (
-      <PageBase logout={(e) => this._logOutHandler(e)}>
+      <PageBase>
         <div className={classes.Definition}>
           <section className={classes.Sec1}>
             <div>
@@ -54,7 +57,14 @@ export class component extends Component {
           <section className={classes.Sec2}>
             <div>
               <h2>Cari Inspirasi Karyamu</h2>
-              <input type="search" placeholder="Desain Web Perpustakaan" />
+              <form onSubmit={this._searcOnSubmit}>
+                <input
+                  onChange={this._searchOnChange}
+                  value={this.state.term}
+                  placeholder="Web Design"
+                />
+                <button type="submit">Cari</button>
+              </form>
               <p>{TEXT.TOOLTIP_BENEFIT()}</p>
             </div>
           </section>

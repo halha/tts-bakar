@@ -17,12 +17,22 @@ export class component extends Component {
     }
   }
 
+  _logOutHandler = (e) => {
+    e.preventDefault();
+    localStorage.setItem("Login", false);
+    localStorage.removeItem("lastPath");
+    window.location.reload();
+  };
+
   render() {
     return (
-      <div>
-        <Drawer login={this.state.isLoggedIn} logout={this.props.logout} />
+      <>
+        <Drawer
+          login={this.state.isLoggedIn}
+          logout={(e) => this._logOutHandler(e)}
+        />
         {this.props.children}
-      </div>
+      </>
     );
   }
 }

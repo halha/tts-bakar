@@ -78,7 +78,6 @@ export class component extends Component {
   };
 
   render() {
-    console.log(this.props);
     return (
       <div>
         {this.props.login
