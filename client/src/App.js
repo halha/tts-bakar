@@ -33,36 +33,36 @@ export class App extends Component {
 
   _RenderApp() {
     return (
-      <>
+      <Switch>
         <Redirect
           from="/login"
           to={this.state.lastPath ? this.state.lastPath : "/"}
         />
+        <Route component={pages.Home} exact path={ROUTES.HOME()} />
+        <Route component={pages.Seacrh} exact path={ROUTES.SEARCH()} />
         <Route component={pages.Error404} />
-      </>
+      </Switch>
     );
   }
 
   _RenderLogin() {
     return (
-      <>
+      <Switch>
+        <Route component={pages.Home} exact path={ROUTES.HOME()} />
+        <Route component={pages.Seacrh} exact path={ROUTES.SEARCH()} />
         <Route component={pages.Login} exact path={ROUTES.LOGIN()} />
         <Route component={pages.Register} exact path={ROUTES.REGISTER()} />
         <Route>
           <Redirect to="/login" />
         </Route>
-      </>
+      </Switch>
     );
   }
 
   render() {
     return (
       <BrowserRouter>
-        <Switch>
-          <Route component={pages.Home} exact path={ROUTES.HOME()} />
-          <Route component={pages.Seacrh} exact path={ROUTES.SEARCH()} />
-          {this.state.isLoggedIn ? this._RenderApp() : this._RenderLogin()}
-        </Switch>
+        {this.state.isLoggedIn ? this._RenderApp() : this._RenderLogin()}
       </BrowserRouter>
     );
   }
