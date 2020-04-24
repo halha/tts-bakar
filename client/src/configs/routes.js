@@ -1,13 +1,16 @@
 const routes = {
   LOGIN() {
-    return "/login";
+    return `/login`;
   },
   REGISTER() {
-    return "/register";
+    return `/register`;
   },
   HOME() {
-    return "/";
-  }
+    return `/`;
+  },
+  SEARCH() {
+    return `/search`;
+  },
 };
 
 export default routes;
