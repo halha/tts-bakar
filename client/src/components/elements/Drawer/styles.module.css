@@ -94,6 +94,7 @@
   height: 34px;
   border-radius: 50%;
   border: 2px solid #fff;
+  background: #fff;
 }
 
 .Nav ul li .avatarBox img {
