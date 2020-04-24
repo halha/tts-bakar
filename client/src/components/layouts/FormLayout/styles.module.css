@@ -6,7 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("../../assets/BG.jpg") no-repeat center;
+  background: url("../../../assets/BG.jpg") no-repeat center;
   background-size: cover;
 }
 
@@ -14,15 +14,15 @@
   color: #fff;
 }
 
-.Login,
+.Form,
 .LeftImage {
   position: relative;
   width: 50%;
   box-sizing: border-box;
 }
 
-.Login {
-  padding: 0 15% 0 10%;
+.Form {
+  padding: 0 17% 0 10%;
 }
 
 .LeftImage {
