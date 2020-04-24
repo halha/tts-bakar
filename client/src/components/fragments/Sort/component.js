@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withStyles } from "@material-ui/core/styles";
-import { Select, MenuItem } from "@material-ui/core";
+import { Select } from "@material-ui/core";
 
 const CustomSelect = withStyles({
   root: {

@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import Register from "../../components/forms/Register";
-import Typography from "@material-ui/core/Typography";
-import PersonAdd from "@material-ui/icons/PersonAdd";
 import classes from "./styles.module.css";
 
 class component extends Component {

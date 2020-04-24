@@ -61,9 +61,11 @@ export class component extends Component {
                 <input
                   onChange={this._searchOnChange}
                   value={this.state.term}
-                  placeholder="Web Design"
+                  placeholder="Design Web Perpustakaan!"
                 />
-                <button type="submit">Cari</button>
+                <button type="submit" style={{ display: "none" }}>
+                  Cari
+                </button>
               </form>
               <p>{TEXT.TOOLTIP_BENEFIT()}</p>
             </div>

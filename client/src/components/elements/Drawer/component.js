@@ -28,9 +28,9 @@ export class component extends Component {
             </Link>
           </li>
           <li>
-            <a onClick={this.props.logout} className={classes.Link}>
+            <span onClick={this.props.logout} className={classes.Link}>
               Keluar
-            </a>
+            </span>
           </li>
           <li>
             <div className={classes.avatarBox}>
@@ -79,11 +79,11 @@ export class component extends Component {
 
   render() {
     return (
-      <div>
+      <>
         {this.props.login
           ? this._renderAfterLogin()
           : this._renderBeforeLogin()}
-      </div>
+      </>
     );
   }
 }

@@ -169,6 +169,7 @@ class component extends React.Component {
 
   handleChangeEmail(e) {
     function validateEmail(email) {
+      // eslint-disable-next-line
       var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return re.test(email);
     }
@@ -221,7 +222,6 @@ class component extends React.Component {
                 label="Name"
                 name="name"
                 autoComplete="name"
-                autoFocus
               />
             </FormControl>
             <FormControl
@@ -349,6 +349,7 @@ class component extends React.Component {
                     href="https://www.termsfeed.com/terms-conditions/c4152b0db055858686b2f4e5700f817a"
                     target="_blank"
                     variant="body2"
+                    rel="noopener noreferrer"
                     style={{ textDecoration: "none", fontWeight: "bold" }}
                   >
                     Semua syarat

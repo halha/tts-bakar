@@ -31,7 +31,7 @@ export class component extends Component {
           login={this.state.isLoggedIn}
           logout={(e) => this._logOutHandler(e)}
         />
-        {this.props.children}
+        <main>{this.props.children}</main>
       </>
     );
   }
