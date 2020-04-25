@@ -11,7 +11,7 @@ export class component extends Component {
   _renderAfterLogin = () => {
     return (
       <nav className={classes.Nav}>
-        <div className={classes.logo}>
+        <Link to="/" className={classes.logo}>
           <div className={classes.imgBox}>
             <img
               src={require("../../../assets/LOGO.svg")}
@@ -20,7 +20,7 @@ export class component extends Component {
             />
           </div>
           <span>bakar</span>
-        </div>
+        </Link>
         <ul>
           <li>
             <Link to="/" className={classes.Link}>
@@ -48,7 +48,7 @@ export class component extends Component {
   _renderBeforeLogin = () => {
     return (
       <nav className={classes.Nav}>
-        <div className={classes.logo}>
+        <Link to="/" className={classes.logo}>
           <div className={classes.imgBox}>
             <img
               src={require("../../../assets/LOGO.svg")}
@@ -57,7 +57,7 @@ export class component extends Component {
             />
           </div>
           <span>bakar</span>
-        </div>
+        </Link>
         <ul>
           <li>
             <Link to="/login" className={classes.Link}>
