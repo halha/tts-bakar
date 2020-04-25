@@ -1,0 +1,26 @@
+.ResultsSec,
+.UsersSec,
+.PostSec {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 50px;
+}
+
+.ResultsSec div,
+.UsersSec div {
+  border-bottom: 1px solid #c0c0c0;
+  padding-bottom: 20px;
+}
+
+.PostSec .nav2 {
+  width: 100%;
+  height: 80px;
+  border-bottom: 1px solid #c0c0c0;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

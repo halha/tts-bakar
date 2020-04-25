@@ -9,15 +9,15 @@ import { FILTER_LIST } from "../../constants";
 import postList from "../../constants/Dummy/postList";
 
 import classes from "./styles.module.css";
+import { Redirect } from "react-router";
 
 export class component extends Component {
   constructor() {
     super();
 
     this.state = {
-      filterClicked: false,
+      fireRedirect: false,
       term: "",
-      results: "",
     };
   }
 
@@ -36,9 +36,12 @@ export class component extends Component {
 
   _searcOnSubmit = (e) => {
     e.preventDefault();
+    this.setState({ fireRedirect: true });
   };
 
   render() {
+    const { term, fireRedirect } = this.state;
+
     return (
       <PageBase>
         <div className={classes.Definition}>
@@ -60,7 +63,7 @@ export class component extends Component {
               <form onSubmit={this._searcOnSubmit}>
                 <input
                   onChange={this._searchOnChange}
-                  value={this.state.term}
+                  value={term}
                   placeholder="Design Web Perpustakaan!"
                 />
                 <button type="submit" style={{ display: "none" }}>
@@ -68,6 +71,16 @@ export class component extends Component {
                 </button>
               </form>
               <p>{TEXT.TOOLTIP_BENEFIT()}</p>
+              {fireRedirect && (
+                <Redirect
+                  to={{
+                    pathname: "/search",
+                    state: {
+                      term: term,
+                    },
+                  }}
+                />
+              )}
             </div>
           </section>
         </div>
