@@ -14,13 +14,13 @@ export class component extends Component {
         <div className={classes.imgBox}>
           <img
             src={require(`../../../assets/${data.image}`)}
-            alt={data.id}
+            alt={data.id_post}
             onDragStart={this._preventDragHandler}
           />
         </div>
         <div className={classes.des}>
           <div className={classes.pDes}>
-            <p>{data.description}</p>
+            <p>{data.title}</p>
           </div>
           <div className={classes.profile}>
             <div>

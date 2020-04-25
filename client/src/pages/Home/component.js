@@ -82,7 +82,7 @@ export class component extends Component {
             columnClassName={classes.myMasonryGridColumn}
           >
             {postList.map((data) => (
-              <Post key={data.id} data={data} />
+              <Post key={data.id_post} data={data} />
             ))}
           </Masonry>
         </div>
