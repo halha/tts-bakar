@@ -222,6 +222,7 @@ class component extends React.Component {
                 label="Name"
                 name="name"
                 autoComplete="name"
+                inputProps={{ maxLength: "20" }}
               />
             </FormControl>
             <FormControl
