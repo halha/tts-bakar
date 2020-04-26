@@ -222,7 +222,7 @@ class component extends React.Component {
                 label="Name"
                 name="name"
                 autoComplete="name"
-                inputProps={{ maxLength: "20" }}
+                inputProps={{ maxLength: "15" }}
               />
             </FormControl>
             <FormControl
@@ -237,7 +237,7 @@ class component extends React.Component {
                 label="Username"
                 name="username"
                 autoComplete="username"
-                inputProps={{ maxLength: "20" }}
+                inputProps={{ maxLength: "15" }}
               />
             </FormControl>
           </Grid>
@@ -298,6 +298,7 @@ class component extends React.Component {
                     error={this.state.errorPass ? true : false}
                     label="Password"
                     name="password"
+                    inputProps={{ minLength: "8", maxLength: "15" }}
                     required
                     endAdornment={
                       <InputAdornment position="end">
