@@ -236,6 +236,7 @@ class component extends React.Component {
                 label="Username"
                 name="username"
                 autoComplete="username"
+                inputProps={{ maxLength: "20" }}
               />
             </FormControl>
           </Grid>
