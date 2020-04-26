@@ -9,14 +9,38 @@
   padding: 0 50px;
 }
 
-.PostSec {
-  padding: 0 50px 50px;
-}
-
 .ResultsSec > div,
 .UsersSec > div {
   border-bottom: 1px solid #c0c0c0;
   padding: 30px 0 30px;
+}
+
+.PostSec {
+  padding: 0 50px 50px;
+}
+
+.ResultsSec > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ResultsSec > div form input {
+  outline: none;
+  border: none;
+  border: 1px solid #c0c0c0;
+  padding: 6px 12px;
+  border-radius: 7px;
+  transition: 0.2s;
+}
+
+.ResultsSec > div form input:focus,
+.ResultsSec > div form input:hover {
+  border-color: #000;
+}
+
+.UsersSec > div {
+  display: flex;
 }
 
 .UsersSec div .user {

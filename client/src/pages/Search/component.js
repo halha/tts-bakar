@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import Masonry from "react-masonry-css";
 import PageBase from "../../components/layouts/PageBase";
 import Filter from "../../components/fragments/Filter";
@@ -11,11 +12,31 @@ import userList from "../../constants/Dummy/userList";
 import classes from "./styles.module.css";
 
 export class component extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      fireRedirect: false,
+      term: "",
+    };
+  }
+
   componentDidMount() {
     document.title = `BaKar | Hasil dari ${this.props.location.state.term}`;
   }
 
+  _searchOnChange = (e) => {
+    this.setState({ term: e.target.value });
+  };
+
+  _searcOnSubmit = (e) => {
+    e.preventDefault();
+    this.setState({ fireRedirect: true });
+  };
+
   render() {
+    const { fireRedirect, term } = this.state;
+
     const users = userList
       // eslint-disable-next-line
       .filter((user) => {
@@ -62,6 +83,27 @@ export class component extends Component {
         <div className={classes.ResultsSec}>
           <div>
             <h1>Menampilkan Hasil dari "{this.props.location.state.term}"</h1>
+            <form onSubmit={this._searcOnSubmit}>
+              <input
+                onChange={this._searchOnChange}
+                value={term}
+                placeholder={this.props.location.state.term}
+                required
+              />
+              <button type="submit" style={{ display: "none" }}>
+                Cari
+              </button>
+            </form>
+            {fireRedirect && (
+              <Redirect
+                to={{
+                  pathname: "/search",
+                  state: {
+                    term: term,
+                  },
+                }}
+              />
+            )}
           </div>
         </div>
         <div className={classes.UsersSec}>
