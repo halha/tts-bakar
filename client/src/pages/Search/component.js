@@ -17,6 +17,7 @@ export class component extends Component {
 
   render() {
     const users = userList
+      // eslint-disable-next-line
       .filter((user) => {
         if (
           user.username
@@ -42,6 +43,7 @@ export class component extends Component {
       });
 
     const posts = postList
+      // eslint-disable-next-line
       .filter((post) => {
         if (
           post.title
