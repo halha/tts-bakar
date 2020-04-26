@@ -16,22 +16,20 @@ export class component extends Component {
     super();
 
     this.state = {
-      fireRedirect: false,
+      fireRedirect: true,
       term: "",
     };
   }
 
   componentDidMount() {
-    document.title = `BaKar | Hasil dari ${this.props.location.state.term}`;
+    document.title = `BaKar | Cari`;
+    if (this.props.location.state) {
+      this.setState({ term: this.props.location.state.term });
+    }
   }
 
   _searchOnChange = (e) => {
     this.setState({ term: e.target.value });
-  };
-
-  _searcOnSubmit = (e) => {
-    e.preventDefault();
-    this.setState({ fireRedirect: true });
   };
 
   render() {
@@ -40,19 +38,15 @@ export class component extends Component {
     const users = userList
       // eslint-disable-next-line
       .filter((user) => {
-        if (
-          user.username
-            .toLowerCase()
-            .includes(this.props.location.state.term.toLowerCase())
-        ) {
+        if (user.username.toLowerCase().includes(term.toLowerCase())) {
           return user;
         }
       })
       .map((user) => {
-        const maxChar = 12;
-        if (user.username.length > maxChar) {
-          user.username = user.username.substring(0, maxChar) + "...";
-        }
+        // const maxChar = 12;
+        // if (user.username.length > maxChar) {
+        //   user.username = user.username.substring(0, maxChar) + "...";
+        // }
         return (
           <div key={user.username} className={classes.user}>
             <div className={classes.avatarBox}>
@@ -66,11 +60,7 @@ export class component extends Component {
     const posts = postList
       // eslint-disable-next-line
       .filter((post) => {
-        if (
-          post.title
-            .toLowerCase()
-            .includes(this.props.location.state.term.toLowerCase())
-        ) {
+        if (post.title.toLowerCase().includes(term.toLowerCase())) {
           return post;
         }
       })
@@ -82,12 +72,12 @@ export class component extends Component {
       <PageBase>
         <div className={classes.ResultsSec}>
           <div>
-            <h1>Menampilkan Hasil dari "{this.props.location.state.term}"</h1>
-            <form onSubmit={this._searcOnSubmit}>
+            <h1>Menampilkan Hasil dari "{term}"</h1>
+            <form>
               <input
                 onChange={this._searchOnChange}
                 value={term}
-                placeholder={this.props.location.state.term}
+                placeholder="Cari karya atau anggota"
                 required
               />
               <button type="submit" style={{ display: "none" }}>
