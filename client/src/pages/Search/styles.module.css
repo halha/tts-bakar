@@ -6,13 +6,34 @@
   height: auto;
   overflow: hidden;
   box-sizing: border-box;
-  padding: 50px;
+  padding: 0 50px;
 }
 
-.ResultsSec div,
-.UsersSec div {
+.PostSec {
+  padding: 0 50px 50px;
+}
+
+.ResultsSec > div,
+.UsersSec > div {
   border-bottom: 1px solid #c0c0c0;
-  padding-bottom: 20px;
+  padding: 30px 0 30px;
+}
+
+.UsersSec div .user {
+  width: 15%;
+}
+
+.UsersSec div .user .avatarBox {
+  width: 75%;
+  margin: auto;
+}
+
+.UsersSec div .user .avatarBox img {
+  width: 100%;
+}
+
+.UsersSec div .user p {
+  text-align: center;
 }
 
 .PostSec .nav2 {
@@ -23,6 +44,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.notFound {
+  text-align: center;
 }
 
 /* REACT MASONRY */

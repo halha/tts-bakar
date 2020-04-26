@@ -65,6 +65,7 @@ export class component extends Component {
                   onChange={this._searchOnChange}
                   value={term}
                   placeholder="Design Web Perpustakaan!"
+                  required
                 />
                 <button type="submit" style={{ display: "none" }}>
                   Cari

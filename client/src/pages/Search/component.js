@@ -27,10 +27,16 @@ export class component extends Component {
         }
       })
       .map((user) => {
+        const maxChar = 12;
+        if (user.username.length > maxChar) {
+          user.username = user.username.substring(0, maxChar) + "...";
+        }
         return (
-          <div key={user.username}>
+          <div key={user.username} className={classes.user}>
+            <div className={classes.avatarBox}>
+              <img src={user.avatar} alt={`Avatar ${user.username}`} />
+            </div>
             <p>{user.username}</p>
-            <img src={user.avatar} alt={`Avatar ${user.username}`} />
           </div>
         );
       });
@@ -57,7 +63,13 @@ export class component extends Component {
           </div>
         </div>
         <div className={classes.UsersSec}>
-          <div>{users.length > 0 ? users : <p>User tidak ditemukan</p>}</div>
+          <div>
+            {users.length > 0 ? (
+              users
+            ) : (
+              <p className={classes.notFound}>User tidak ditemukan</p>
+            )}
+          </div>
         </div>
         <div className={classes.PostSec}>
           <div className={classes.nav2}>
@@ -73,7 +85,7 @@ export class component extends Component {
               {posts}
             </Masonry>
           ) : (
-            <p>Post tidak ditemukan</p>
+            <p className={classes.notFound}>Post tidak ditemukan</p>
           )}
         </div>
       </PageBase>
